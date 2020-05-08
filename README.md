@@ -1,4 +1,4 @@
-# Basic role base auth structure for type graphql with two type of user
+# Basic role base auth structure using jwt for type-graphql with two types of user
 
 Steps to run this project:
 
