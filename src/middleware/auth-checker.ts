@@ -1,6 +1,7 @@
 import { MyContext } from '../types/MyContext';
 import { AuthChecker } from 'type-graphql';
 import { verify } from 'jsonwebtoken';
+import { JWT_SECRET_KEY } from 'src/config';
 
 export const customAuthChecker: AuthChecker<MyContext> = ({ context }, roles) => {
   const authorization = context.req.headers["authorization"];
@@ -9,7 +10,7 @@ export const customAuthChecker: AuthChecker<MyContext> = ({ context }, roles) =>
   }
   try {
     const token = authorization.split(" ")[1];
-    const payload = verify(token, "MySecretKey");
+    const payload = verify(token, JWT_SECRET_KEY);
     // console.log(payload);
     context.payload = payload as any;
     if (roles.length === 0) {
