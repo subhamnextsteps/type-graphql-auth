@@ -1,4 +1,4 @@
-# Awesome Project Build with TypeORM
+# Basic role base auth structure for type graphql with two type of user
 
 Steps to run this project:
 
