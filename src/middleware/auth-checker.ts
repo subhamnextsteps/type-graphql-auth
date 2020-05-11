@@ -1,7 +1,7 @@
 import { MyContext } from '../types/MyContext';
 import { AuthChecker } from 'type-graphql';
 import { verify } from 'jsonwebtoken';
-import { JWT_SECRET_KEY } from 'src/config';
+import { JWT_SECRET_KEY } from '../config';
 
 export const customAuthChecker: AuthChecker<MyContext> = ({ context }, roles) => {
   const authorization = context.req.headers["authorization"];
